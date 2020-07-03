@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 export default function Repositories(){
     const history = useHistory();
     const [repositories, setRepositories] = useState([]);
-    const [repositoriesUrl, setRepositoriesUrl] = useState([]);
+    //const [repositoriesUrl, setRepositoriesUrl] = useState([]);
     const [ vazio, setVazio ] = useState(false);
 
     useEffect(() => {
@@ -14,13 +14,13 @@ export default function Repositories(){
         repositoriesName = JSON.parse(repositoriesName);
         if (repositoriesName != null && repositoriesName.length > 0) {
             
-            console.log(repositoriesName);
+            //console.log(repositoriesName);
             setRepositories(repositoriesName);
             localStorage.clear();
             
         
         }
-        else if (repositoriesName.length === 0) {
+        else if (repositoriesName != null && repositoriesName.length === 0) {
             setVazio(true);
         }else{
             history.push('/');
@@ -47,7 +47,6 @@ export default function Repositories(){
                 { repositories.map(repository => {
                     return (
                         <S.ListItem>
-                           
                            { repository }
                         </S.ListItem>
                     )

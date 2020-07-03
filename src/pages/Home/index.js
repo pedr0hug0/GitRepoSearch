@@ -16,12 +16,14 @@ function App(props) {
       const repositories = response.data;
       
       const repositoriesName = [];
+
       repositories.map((repository) => {
-      repositoriesName.push(repository.name);
+      repositoriesName.push(repository.name, repository.html_url);
       });
       localStorage.setItem('repositoriesName', JSON.stringify(repositoriesName));
       history.push('/repositories');//mudar para rota repositories
-      
+      console.log(response.data);
+      console.log(repositoriesName);
       /*--novo atributo
 
       const repositoriesUrl = [];
@@ -50,14 +52,13 @@ function App(props) {
     <S.HomeContainer>
       <h1>{props.title}</h1>
       <h2>{props.users}</h2>
-      Olá <h3 style={{fontSize:'50px', color:'red'}}>{usuario}</h3>.
+      Olá <h3 style={{fontSize:'50px', color:'red'}}>{usuario}</h3>
       <S.Content>
-      
-        
-        <S.Input className="usuarioInput" placeholder="Usuario" value={usuario} onChange={e => setUsuario(e.target.value)}/>
+             
+        <S.Input className="usuarioInput" placeholder="Usuario" value={usuario} onChange={e => setUsuario(e.target.value)} placeholder="Digite o nome do usuário."/>
         <S.Button type="button" onClick={handlePesquisa}> Pesquisar </S.Button>
       </S.Content>
-      { erro ? <S.ErrorMsg>Ocorreu um erro. Tente novamente.</S.ErrorMsg> : '' }
+      { erro ? <S.ErrorMsg>Nenhum usuario encontrado. Tente novamente.</S.ErrorMsg> : '' }
       
     </S.HomeContainer>
   );
