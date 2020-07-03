@@ -37,4 +37,4 @@ export const LinkLinkHome = styled(Link)`
     background-color: #000;
     color: #fff;
     text-decoration: none;
-`
+`;
