@@ -1,3 +1,7 @@
+#GitRepoSearch
+
+Projeto que utiliza a API do github para buscar repositorios dos usuarios.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
