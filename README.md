@@ -2,6 +2,8 @@
 
 Projeto que utiliza a API do github para buscar repositorios dos usuarios.
 
+https://pedr0hug0.herokuapp.com
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
